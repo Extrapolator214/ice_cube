@@ -24,6 +24,8 @@ module IceCube
     end
 
     def self.rule_from_ical(ical)
+      raise ArgumentError, 'empty ical rule' if ical.nil?
+
       params = { validations: { } }
 
       ical.split(';').each do |rule|
